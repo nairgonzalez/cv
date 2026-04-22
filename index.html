@@ -1,11 +1,70 @@
-<html>
+<!DOCTYPE html>
+<html lang="es">
 <head>
-<title>CURRICULUM</title>
+    <meta charset="UTF-8">
+    <title>Calcular Resultado</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        input, button {
+            padding: 10px;
+            font-size: 16px;
+            margin: 5px;
+        }
+        #resultado {
+            margin-top: 20px;
+            font-size: 20px;
+            color: blue;
+        }
+    </style>
 </head>
 <body>
 
-<h1>MI CURRICULUM</h1>
-<p>profesional con la awm</p>
+    <h2>Ingrese la base y exponente para que me de resultado un 8.. 
+        
+      
+    <input type="number" id="base" placeholder="Escribí la base">
+    <input type="number" id="exponente" placeholder="Escribí la potencia">
+    <button onclick="calcular()">Calcular</button>
+
+    <div id="resultado"></div>
+
+    <script>
+       function calcular() {
+            let base = document.getElementById("base").value;
+            let exponente = document.getElementById("exponente").value;
+
+            // Validación
+            if (base === "") {
+                document.getElementById("resultado").innerText = "Por favor ingresa la base.";
+                return;
+            }
+
+            if (exponente === "") {
+                document.getElementById("resultado").innerText = "Por favor ingresa el exponente.";
+                return;
+            }
+
+            let resultado = Math.pow(base, exponente);
+
+            document.getElementById("resultado").innerText = 
+                "Resultado: " + resultado;
+		if (resultado === 8) {
+                window.alert("Correcto");
+                return;
+            }
+			{
+                window.alert("Incorrecto");
+                return;
+            }
+			
+		
+        
+		}
+    </script>
 
 </body>
 </html>
